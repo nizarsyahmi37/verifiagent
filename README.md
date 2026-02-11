@@ -40,9 +40,56 @@ VerifiAgent combines:
 
 ## Quick Start
 
+### 1. Clone and Install
 ```bash
-# Coming soon - 24-hour build in progress
-npm install @verifiagent/sdk
+git clone https://github.com/nizarsyahmi37/verifiagent.git
+cd verifiagent
+npm install
+```
+
+### 2. Configure Environment
+```bash
+cp .env.example .env
+# Edit .env with your configuration
+```
+
+### 3. Start Development Server
+```bash
+npm run dev
+```
+
+Server runs on http://localhost:3000
+
+### 4. Test API
+```bash
+./test-api.sh
+```
+
+## API Documentation
+
+See [API.md](./API.md) for full API documentation.
+
+### Example: Verify an Agent
+
+```bash
+# 1. Request challenge
+curl -X POST http://localhost:3000/api/verify/challenge \
+  -H "Content-Type: application/json" \
+  -d '{
+    "agentId": "my-agent-001",
+    "walletAddress": "DHyguoJ3Ej11BD3addE1ZuPKwHEbEgikNL4EoDrvyNLH"
+  }'
+
+# 2. Sign the challenge message with your Solana wallet
+
+# 3. Submit signature
+curl -X POST http://localhost:3000/api/verify/response \
+  -H "Content-Type: application/json" \
+  -d '{
+    "challengeId": "chal_...",
+    "signature": "base58_signature",
+    "publicKey": "DHyguoJ3Ej11BD3addE1ZuPKwHEbEgikNL4EoDrvyNLH"
+  }'
 ```
 
 ## Built for Colosseum Agent Hackathon
