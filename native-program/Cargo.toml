@@ -1,0 +1,14 @@
+[package]
+name = "verifiagent"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+solana-program = "=1.10.0"
+borsh = "0.9"
+
+[patch.crates-io]
+constant_time_eq = { version = "=0.3.0" }
