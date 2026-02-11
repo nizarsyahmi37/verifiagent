@@ -1,0 +1,118 @@
+=============================================
+VERIFIAGENT - UPDATED TWITTER THREAD (LIVE ON-CHAIN!)
+=============================================
+
+⚡ NEW: Now with REAL Solana devnet transactions!
+
+Copy-paste these tweets in order. Post as a thread.
+
+TWEET 1 (Opening hook):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚨 AI Agent Identity Crisis 🚨
+
+Creating a fake AI agent costs $0.
+Clone any agent 100x.
+No way to prove identity.
+Sybil attacks everywhere.
+
+This is killing AI agent adoption in DeFi, marketplaces, and multi-agent systems.
+
+We built the solution - and it's LIVE on @solana devnet. 🧵
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TWEET 2 (Problem details):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+The problem:
+• New agent = new wallet = $0 cost
+• Your best agent can be cloned tomorrow
+• No proof YOU built it first
+• Markets can't distinguish real from fake
+• Trust is impossible
+
+DeFi protocols won't onboard agents. Too risky. 💀
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TWEET 3 (Solution intro):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Enter VerifiAgent 🔐
+
+A 3-layer identity + execution trace protocol on @solana
+
+1. Challenge-response verification (Solana signatures)
+2. Immutable on-chain activity traces (Memo program)
+3. Transparent trust levels (L0-L3)
+
+⚡ NEW: Every action writes to devnet - REAL transactions!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TWEET 4 (Technical details + LIVE):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Technical stack:
+
+🔹 LIVE on @solana devnet
+🔹 Real transactions using Memo program
+🔹 Agent identity + activity logs on-chain
+🔹 SHA-256 hashed activity traces
+🔹 8 RESTful API endpoints
+🔹 TypeScript backend + full Anchor program code
+
+Every demo action = verifiable devnet transaction! ✅
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TWEET 5 (CTA with live demo):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 Try it live (REAL on-chain transactions):
+https://verifiagent.up.railway.app
+
+💻 Open source:
+https://github.com/nizarsyahmi37/verifiagent
+
+🔍 Verify on Solana Explorer:
+https://explorer.solana.com/?cluster=devnet
+
+Built for @colosseum_org Agent Hackathon 🏆
+
+Try the demo and see your actions on devnet! 👇
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+HASHTAGS TO ADD:
+#Solana #AIAgents #Web3 #Blockchain #Devnet #Identity #Hackathon
+
+=============================================
+
+ALTERNATIVE: SHORT PUNCHY TWEET
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚡ VerifiAgent is now LIVE on @solana devnet!
+
+Every agent verification = real on-chain transaction
+Every activity log = verifiable on Solana Explorer
+
+Problem: AI agents have $0 Sybil cost
+Solution: Cryptographic identity + on-chain traces
+
+✅ Live demo: https://verifiagent.up.railway.app
+✅ Verify: https://explorer.solana.com/?cluster=devnet
+
+Built for @colosseum_org Agent Hackathon
+
+#Solana #AIAgents #Web3
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+=============================================
+BONUS TECHNICAL TWEET:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Just pushed LIVE @solana devnet integration to VerifiAgent 🔥
+
+Now using Memo program to write agent activities on-chain:
+• Agent init → devnet transaction
+• Every activity → SHA-256 hash on-chain
+• All verifiable on Explorer
+
+Try it: https://verifiagent.up.railway.app
+
+Every action you take creates a REAL devnet transaction. See it yourself! 🔍
+
+https://explorer.solana.com/?cluster=devnet
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+=============================================
