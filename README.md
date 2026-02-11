@@ -40,10 +40,14 @@ VerifiAgent combines:
 ## Technical Stack
 
 - **Backend:** Node.js + Express + TypeScript (in-memory storage for MVP)
-- **Blockchain:** Solana Anchor Program (Rust)
-  - Program ID: `G6cYQD4sC5aoVipQveiSrB3ccrocmjoz1f7P83nS2RVP`
-  - 3 Instructions: `initialize_agent`, `log_activity`, `verify_trace`
-  - PDAs: Agent identity + Activity traces
+- **Blockchain:** Solana Devnet (LIVE!)
+  - **Active:** Solana Memo Program (`MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr`)
+  - Every demo action creates real devnet transactions
+  - Verifiable on Solana Explorer
+  - **Designed:** Full Anchor Program (complete code in `programs/verifiagent/`)
+    - Program ID: `G6cYQD4sC5aoVipQveiSrB3ccrocmjoz1f7P83nS2RVP` (not deployed, code complete)
+    - 3 Instructions: `initialize_agent`, `log_activity`, `verify_trace`
+    - PDAs: Agent identity + Activity traces
 - **Crypto:** SHA-256 hashing, NaCl signatures, Ed25519
 - **Frontend:** Interactive demo UI (live at Railway)
 
