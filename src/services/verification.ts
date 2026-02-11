@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import { storage } from './storage';
+import { solanaService } from './solana';
 import { Challenge, Agent, TrustLevel, VerificationResponse } from '../types';
 import { generateNonce, generateChallengeMessage, verifySolanaSignature, generateId } from '../utils/crypto';
 import { config } from '../config';
@@ -101,6 +102,18 @@ class VerificationService {
         trustLevel: TrustLevel.L1_CONFIRMED,
         publicKey,
       });
+
+      // Initialize agent on-chain (async, non-blocking)
+      solanaService
+        .initializeAgent(agent.walletAddress)
+        .then((result) => {
+          if (result.success) {
+            console.log(`[Solana] Agent initialized on-chain: ${result.txHash}`);
+          } else {
+            console.error('[Solana] Failed to initialize agent on-chain');
+          }
+        })
+        .catch((err) => console.error('[Solana] Error:', err));
     }
 
     // Delete challenge (one-time use)

@@ -1,4 +1,5 @@
 import { storage } from './storage';
+import { solanaService } from './solana';
 import { ActivityTrace } from '../types';
 import { hashAction, generateId } from '../utils/crypto';
 import { verificationService } from './verification';
@@ -58,6 +59,24 @@ class ActivityService {
       trustLevel: newTrustLevel,
     });
 
+    // Log activity on-chain (async, non-blocking)
+    const actionHashBuffer = Buffer.from(actionHash, 'hex');
+    solanaService
+      .logActivity(agent.walletAddress, actionHashBuffer, actionType, agent.totalActivities)
+      .then((result) => {
+        if (result.success) {
+          console.log(`[Solana] Activity logged on-chain: ${result.txHash}`);
+          console.log(`[Solana] Trace PDA: ${result.tracePDA}`);
+          // Update trace with on-chain info
+          storage.updateActivity(trace.traceId, {
+            onChainTxHash: result.txHash,
+          });
+        } else {
+          console.error('[Solana] Failed to log activity on-chain');
+        }
+      })
+      .catch((err) => console.error('[Solana] Error:', err));
+
     return trace;
   }
 
@@ -71,11 +90,12 @@ class ActivityService {
   /**
    * Verify activity trace
    */
-  verifyTrace(actionHash: string): {
+  async verifyTrace(actionHash: string): Promise<{
     valid: boolean;
     trace?: ActivityTrace;
+    onChain?: boolean;
     message: string;
-  } {
+  }> {
     const trace = storage.getActivityByHash(actionHash);
 
     if (!trace) {
@@ -85,12 +105,26 @@ class ActivityService {
       };
     }
 
-    // TODO: Verify on-chain hash matches
+    // Verify on-chain if txHash exists
+    let onChainVerified = false;
+    if (trace.onChainTxHash) {
+      try {
+        const agent = storage.getAgent(trace.agentId);
+        if (agent) {
+          const tracePDA = await solanaService.getTracePDA(agent.walletAddress, agent.totalActivities - 1);
+          const onChainResult = await solanaService.verifyTrace(tracePDA.toBase58());
+          onChainVerified = onChainResult.verified;
+        }
+      } catch (err) {
+        console.error('[Solana] Error verifying on-chain:', err);
+      }
+    }
 
     return {
       valid: true,
       trace,
-      message: 'Trace verified',
+      onChain: onChainVerified,
+      message: onChainVerified ? 'Trace verified on-chain' : 'Trace verified off-chain',
     };
   }
 

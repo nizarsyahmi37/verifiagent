@@ -8,6 +8,7 @@ export const config = {
   solana: {
     rpcUrl: process.env.SOLANA_RPC_URL || 'https://api.mainnet-beta.solana.com',
     network: process.env.SOLANA_NETWORK || 'mainnet-beta',
+    programId: process.env.SOLANA_PROGRAM_ID || 'G6cYQD4sC5aoVipQveiSrB3ccrocmjoz1f7P83nS2RVP',
   },
   challenge: {
     expirationTime: 5 * 60 * 1000, // 5 minutes

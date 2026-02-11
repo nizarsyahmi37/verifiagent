@@ -70,6 +70,17 @@ class StorageService {
     return undefined;
   }
 
+  updateActivity(traceId: string, updates: Partial<ActivityTrace>): void {
+    for (const [agentId, activities] of this.activities.entries()) {
+      const index = activities.findIndex((a) => a.traceId === traceId);
+      if (index !== -1) {
+        activities[index] = { ...activities[index], ...updates };
+        this.activities.set(agentId, activities);
+        return;
+      }
+    }
+  }
+
   // Stats
   getTotalAgents(): number {
     return this.agents.size;
