@@ -1,0 +1,122 @@
+=============================================
+VERIFIAGENT - TWITTER THREAD (POST NOW!)
+=============================================
+
+Copy-paste these tweets in order. Post as a thread.
+
+TWEET 1 (Opening hook):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚨 AI Agent Identity Crisis 🚨
+
+Creating a fake AI agent costs $0.
+Clone any agent 100x.
+No way to prove identity.
+Sybil attacks everywhere.
+
+This is killing AI agent adoption in DeFi, marketplaces, and multi-agent systems.
+
+We built the solution. 🧵
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TWEET 2 (Problem details):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+The problem:
+• New agent = new wallet = $0 cost
+• Your best agent can be cloned tomorrow
+• No proof YOU built it first
+• Markets can't distinguish real from fake
+• Trust is impossible
+
+DeFi protocols won't onboard agents. Too risky. 💀
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TWEET 3 (Solution intro):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Enter VerifiAgent 🔐
+
+A 3-layer identity + execution trace protocol on @solana
+
+1. Challenge-response verification (Solana signatures)
+2. Immutable on-chain activity traces (PDAs)
+3. Transparent trust levels (L0-L3)
+
+Economic Sybil resistance: ~$25 per 100 activities
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TWEET 4 (Technical details):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Technical stack:
+
+🔹 Anchor program on Solana mainnet
+🔹 Agent identity PDAs (deterministic, unforgeable)
+🔹 SHA-256 hashed activity traces
+🔹 Trust computed on-chain (transparent algorithm)
+🔹 8 RESTful API endpoints
+🔹 TypeScript backend + Rust program
+
+Program ID: G6cYQD4sC5aoVipQveiSrB3ccrocmjoz1f7P83nS2RVP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TWEET 5 (CTA with links):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 Try it live:
+https://verifiagent.up.railway.app
+
+💻 Open source:
+https://github.com/nizarsyahmi37/verifiagent
+
+📖 Full docs:
+• Architecture guide
+• API reference
+• Solana integration
+
+Built for @colosseum_org Agent Hackathon 🏆
+
+Check it out and let me know what you think! 👇
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+HASHTAGS TO ADD:
+#Solana #AIAgents #Web3 #Blockchain #DeFi #Identity #Hackathon
+
+=============================================
+
+ALTERNATIVE: SHORT PUNCHY TWEET (If you prefer single tweet)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Problem: Creating a fake AI agent costs $0
+
+Solution: VerifiAgent makes it cost $25 + 30 days to build L3 trust
+
+Economic Sybil resistance on @solana 🔐
+
+✅ Live demo: https://verifiagent.up.railway.app
+✅ Open source: https://github.com/nizarsyahmi37/verifiagent
+
+Built for @colosseum_org Agent Hackathon
+
+#Solana #AIAgents #Web3
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+=============================================
+ENGAGEMENT TIPS:
+=============================================
+
+1. POST TIMING: Now is good! Then repost tomorrow morning (8-10am EST)
+
+2. ENGAGE WITH REPLIES:
+   - Reply to every comment within 1 hour
+   - Thank people who try the demo
+   - Answer technical questions with code/docs links
+
+3. RETWEET MENTIONS:
+   - If anyone shares your demo, retweet it
+   - Quote tweet with "Thanks for checking it out!"
+
+4. TAG RELEVANT ACCOUNTS:
+   - @colosseum_org (already tagged)
+   - @solana (maybe in replies, not main thread)
+   - Other hackathon participants who build complementary stuff
+
+5. PIN THE THREAD:
+   - Pin thread 1 to your profile for visibility
+
+=============================================
