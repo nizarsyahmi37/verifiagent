@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import { storage } from './storage';
-import { solanaService } from './solana';
+import { solanaLiveService } from './solana-live';
 import { Challenge, Agent, TrustLevel, VerificationResponse } from '../types';
 import { generateNonce, generateChallengeMessage, verifySolanaSignature, generateId } from '../utils/crypto';
 import { config } from '../config';
@@ -103,17 +103,18 @@ class VerificationService {
         publicKey,
       });
 
-      // Initialize agent on-chain (async, non-blocking)
-      solanaService
+      // Initialize agent on-chain (async, non-blocking) - LIVE ON DEVNET!
+      solanaLiveService
         .initializeAgent(agent.walletAddress)
         .then((result) => {
-          if (result.success) {
-            console.log(`[Solana] Agent initialized on-chain: ${result.txHash}`);
+          if (result.success && result.txHash) {
+            console.log(`[Solana LIVE] Agent initialized on devnet: ${result.txHash}`);
+            console.log(`[Solana LIVE] Explorer: https://explorer.solana.com/tx/${result.txHash}?cluster=devnet`);
           } else {
-            console.error('[Solana] Failed to initialize agent on-chain');
+            console.error('[Solana LIVE] Failed to initialize agent on-chain');
           }
         })
-        .catch((err) => console.error('[Solana] Error:', err));
+        .catch((err) => console.error('[Solana LIVE] Error:', err));
     }
 
     // Delete challenge (one-time use)

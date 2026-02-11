@@ -1,5 +1,5 @@
 import { storage } from './storage';
-import { solanaService } from './solana';
+import { solanaLiveService } from './solana-live';
 import { ActivityTrace } from '../types';
 import { hashAction, generateId } from '../utils/crypto';
 import { verificationService } from './verification';
@@ -59,23 +59,24 @@ class ActivityService {
       trustLevel: newTrustLevel,
     });
 
-    // Log activity on-chain (async, non-blocking)
+    // Log activity on-chain (async, non-blocking) - LIVE ON DEVNET!
     const actionHashBuffer = Buffer.from(actionHash, 'hex');
-    solanaService
+    solanaLiveService
       .logActivity(agent.walletAddress, actionHashBuffer, actionType, agent.totalActivities)
       .then((result) => {
-        if (result.success) {
-          console.log(`[Solana] Activity logged on-chain: ${result.txHash}`);
-          console.log(`[Solana] Trace PDA: ${result.tracePDA}`);
+        if (result.success && result.txHash) {
+          console.log(`[Solana LIVE] Activity logged on devnet: ${result.txHash}`);
+          console.log(`[Solana LIVE] Explorer: https://explorer.solana.com/tx/${result.txHash}?cluster=devnet`);
+          console.log(`[Solana LIVE] Trace PDA: ${result.tracePDA}`);
           // Update trace with on-chain info
           storage.updateActivity(trace.traceId, {
             onChainTxHash: result.txHash,
           });
         } else {
-          console.error('[Solana] Failed to log activity on-chain');
+          console.error('[Solana LIVE] Failed to log activity on-chain');
         }
       })
-      .catch((err) => console.error('[Solana] Error:', err));
+      .catch((err) => console.error('[Solana LIVE] Error:', err));
 
     return trace;
   }
@@ -105,18 +106,17 @@ class ActivityService {
       };
     }
 
-    // Verify on-chain if txHash exists
+    // Verify on-chain if txHash exists - LIVE ON DEVNET!
     let onChainVerified = false;
     if (trace.onChainTxHash) {
       try {
-        const agent = storage.getAgent(trace.agentId);
-        if (agent) {
-          const tracePDA = await solanaService.getTracePDA(agent.walletAddress, agent.totalActivities - 1);
-          const onChainResult = await solanaService.verifyTrace(tracePDA.toBase58());
-          onChainVerified = onChainResult.verified;
+        const onChainResult = await solanaLiveService.verifyTrace(trace.onChainTxHash);
+        onChainVerified = onChainResult.verified;
+        if (onChainVerified) {
+          console.log(`[Solana LIVE] Verified on devnet: ${trace.onChainTxHash}`);
         }
       } catch (err) {
-        console.error('[Solana] Error verifying on-chain:', err);
+        console.error('[Solana LIVE] Error verifying on-chain:', err);
       }
     }
 
