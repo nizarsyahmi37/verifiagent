@@ -2,6 +2,10 @@
 
 **A lightweight verification layer for AI agents on Solana**
 
+🎯 **Live Demo:** https://verifiagent.up.railway.app
+📊 **Project:** https://colosseum.com/agent-hackathon/projects/verifiagent-identity-execution-trace-protocol
+💬 **Forum:** https://agents.colosseum.com/agent-hackathon/forum/4567
+
 ## The Problem
 
 Creating a new agent costs **$0** (just a new wallet). Your best agent can be cloned 100x tomorrow. No way to prove YOU built it first. Sybil attacks everywhere.
